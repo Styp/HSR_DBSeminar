@@ -1,0 +1,139 @@
+%
+% HSR LaTex Template
+% Copyright 2012, Florian Bentele / modified 2015 - Martin Stypinski
+%
+% Complete LaTex template for thesis at HSR, customized
+% for Prof. Dr. Peter Heinzmann
+%
+%
+% This document is free software: you can redistribute
+% it and/or modify it under the terms of the GNU
+% General Public License as published by the Free
+% Software Foundation, either version 3 of the License,
+% or (at your option) any later version.
+%
+% This document is distributed in the hope that it will
+% be useful, but WITHOUT ANY WARRANTY; without even the
+% implied warranty of MERCHANTABILITY or FITNESS FOR A
+% PARTICULAR PURPOSE. See the GNU General Public
+% License for more details.
+%
+% You should have received a copy of the GNU General
+% Public License along with this document. If not, see
+% <http://www.gnu.org/licenses/>.
+%
+
+\newcommand{\styp}{Martin Stypinski}
+
+% commands for tick and cross
+\newcommand{\checkgood}{\ding{51}}
+\newcommand{\checkbad}{\ding{55}}
+
+
+\documentclass[11pt]{hsrthesis}
+
+% The following snippet is copied from this stack overflow answer
+% http://stackoverflow.com/a/3175141
+% It sets the color right for lstlisting, so that we 
+% can include code snippet
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+\makeindex
+
+
+\begin{document}
+\input{chapter/00_preamble/01title}
+\newpage
+
+\pagenumbering{roman}
+
+\newpage
+
+% The main content
+%%%%%%%%%%%%%%%%%%
+\input{chapter/01_abstract/01abstract}
+
+
+% Table of content
+% % % % % % % % %
+\newpage
+\addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{chapter/10_introduction/01introduction}
+
+
+% The main content
+%%%%%%%%%%%%%%%%%%
+
+
+
+
+% Templates
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%\input{chapter/99_demo/demo}
+
+% List of figures & glossary
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\listoffigures
+
+\clearpage
+
+\printglossary[style=altlist,title=Glossar]
+
+% Bibliography
+%%%%%%%%%%%%%%
+\bibliographystyle {alpha}
+\bibliography{index/bibliography}
+
+
+
+\end{document}
+
+% Templates
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%\input{chapter/99_demo/demo}
+
+% List of figures & glossary
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\listoffigures
+
+\clearpage
+
+\printglossary[style=altlist,title=Glossar]
+
+% Bibliography
+%%%%%%%%%%%%%%
+\bibliographystyle {alpha}
+\bibliography{index/bibliography}
+
+
+
+\end{document} 
