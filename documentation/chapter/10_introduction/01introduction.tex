@@ -5,17 +5,18 @@ This paper is the result of the seminar on "Advanced Database Systems" at the Un
 \section{Motivation}
 Modern \Gls{RDBMS} show the perfect snapshot of the past, while modern businesses rely heavily on data, these concepts become limiting. While there is a need for storage and persistence, where \Gls{RDBMS}s are still in their prime, there is another need for real time data processing. Real time data processing can be useful to give an accurate anticipation about the future. This use case is a driving force to justify an new database concept for data streams - the \Gls{DSMS} is born. 
 \\
-\subsection{Fundamentals of \Gls{RDBMS}}
-To gain further insights and justify the need for new concepts, it is necessary to have at the look at already given and proven concepts. Fundamentals of database systems require to understand the concept of the CAP-Theorem. The CAP-Theorem was first introduced by Eric Brewer in 2000 and later verified.
+\subsection{Fundamentals of database systems}
+To gain further insights and justify the need for new concepts, it is necessary to have a look at already given and proven concepts. Fundamentals of database systems require to understand the concept of the CAP-Theorem. The CAP-Theorem was first introduced by Eric Brewer in 2000 and later verified.
 \\
 \blockquote{When designing distributed web services, there are three properties that are commonly desired: consistency, availability, and partition tolerance. It is impossible to achieve all three.} \cite[S. 1]{Gilbert:2002:BCF:564585.564601}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{images/cap.pdf}
+%	\includegraphics[width=0.8\textwidth]{images/cap.pdf}
 	\caption{Übersicht der Project Helin Architektur }
 	\label{fig:architecture-overview}
 \end{figure}
+
 
 \begin{itemize}
 	\item{\textbf{Consistency:} Guarantees that a read will receive the most recent data or an error.}
@@ -24,12 +25,21 @@ To gain further insights and justify the need for new concepts, it is necessary 
 	
 \end{itemize}
 
+Furter figure (xyz) illustrates this with three circles and indicates that the intersection of two of them enables further technology. These areas are important for todays database technology.
 
-\begin{tabular}{lll}
 
+\begin{itemize}
+	\item{\textbf{CA} Consistency \& Availability: \\
+	All RDBMS that follow the ACID theorem can be found here. Consistency is uf utmost importance. (\textit{PostgreSQL})}
+	\item{\textbf{AP} Availability \& Partition Tolerance: \\
+	Most NoSQL technology can be found here and systems that follow the BASE theorem. The consistency is 'relaxed' but the availability and distributed performance can therefore be imporved! }
+	\item{\textbf{PC} Consistency \& Partition Tolerance: \\
+	Acid based distributed databases can be found here, often a 'read-any' and 'write all' scheme is implemented.}
+\end{itemize}
 
-\end{tabular}
+All these systems lead to a common subset of operations. All data objects can be created, read, updated and deleted (CRUD). This implies the database to act as a central storage, but what if data is time critical or due to internet trafic not consitence. The importance of the storage shifts towards a central subscription system.
 
+But what happens, if time critical applications need to evaluate data and the 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{images/DBMS_overview.png}
@@ -37,10 +47,16 @@ To gain further insights and justify the need for new concepts, it is necessary 
 	\label{fig:architecture-overview}
 \end{figure}
 
+\begin{tabular}{lll}
+
+
+\end{tabular}
+
+
 
 \begin{figure}[H]
 	\centering
-%	\includegraphics[width=1\textwidth]{images/DSMS_overview.png}
+	\includegraphics[width=1\textwidth]{images/DSMS_overview.png}
 	\caption{Übersicht der Project Helin Architektur }
 	\label{fig:architecture-overview}
 \end{figure}
